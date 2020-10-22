@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "c43ca1bf-bf2a-4329-b0bb-8b8269420e69",
+		"name": "Berry_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_phone\":\"011011\",\r\n    \"client_password\":\"123456\",\r\n    \"device_token\":\"f2GKmJkk3cg:APA91bE_7KoxLd81Fplvcr1kPFZBKeBmrViW5Cyvamju3Uqp974s9B70F10ZDLAt8JW57bhjk6zi5En8nILn0z3PbRjCOcBj-EaRZGDU7syCDS_lcv0y89qmiSUDO2FLgnqDue-_Gchs\",\r\n    \"type\":\"android\",\r\n    \"lang\":\"ar\"\r\n}"
+						},
+						"url": {
+							"raw": "http://berry74.com/new/system/api/login.php",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Get-latest-10projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-latest-projects.php?lang=ar&client_id=39",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-latest-projects.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "client_id",
+									"value": "39"
+								}
+							]
+						},
+						"description": "get the latest project from the client id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-oldest-10projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-oldest-projects.php?lang=ar&client_id=39",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-oldest-projects.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "client_id",
+									"value": "39"
+								}
+							]
+						},
+						"description": "get-oldest-10projects by client id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-about-project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-about-project.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-about-project.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get about the project by project_id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-project-service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-project-service.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-project-service.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get-project-service by project_id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-project-images",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-project-images.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-project-images.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get-project-images by project_id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-project-drawing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-project-drawing.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-project-drawing.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get-project-drawing by project_id"
+					},
+					"response": []
+				},
+				{
+					"name": "get-project-finishing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-project-finishing.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-project-finishing.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get the project finishing inside finshing and outside finishing"
+					},
+					"response": []
+				},
+				{
+					"name": "get-project-location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-project-location.php?lang=ar&project_id=150",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-project-location.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "project_id",
+									"value": "150"
+								}
+							]
+						},
+						"description": "get the project location by project_id "
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "get-all-news",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-news.php?lang=ar",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-news.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								}
+							]
+						},
+						"description": "Get al news From Databas the latest one "
+					},
+					"response": []
+				},
+				{
+					"name": "get-one-news ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-one-news.php?lang=ar&news_id=144",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-one-news.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "news_id",
+									"value": "144"
+								}
+							]
+						},
+						"description": "get-one-news to show it by id "
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "searchProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/searchProject.php?lang=ar&key_word=اسم",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"searchProject.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								},
+								{
+									"key": "key_word",
+									"value": "اسم"
+								}
+							]
+						},
+						"description": "Search projects by project name  arabic or english "
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-projects.php?lang=ar",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-projects.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								}
+							]
+						},
+						"description": "get all the projects from the newest project"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-slider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-slider.php?lang=en",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-slider.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						},
+						"description": "get all data from slider"
+					},
+					"response": []
+				},
+				{
+					"name": "get-about-app",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-about.php?lang=ar",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-about.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								}
+							]
+						},
+						"description": "get-about-app"
+					},
+					"response": []
+				},
+				{
+					"name": "get-contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://berry74.com/new/system/api/get-contact.php?lang=ar",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"new",
+								"system",
+								"api",
+								"get-contact.php"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								}
+							]
+						},
+						"description": "get-contact"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

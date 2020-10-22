@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c8f214e0-1a5b-4007-91b4-df57fbbdc14f" name="promo" url="http://www.promosbh.com/newsite/">
+        <fileTransfer rootFolder="/public_html/newsite" host="www.promosbh.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="0ed1c012-ce60-4549-904f-2e15c2e4fe45" name="Berry" url="http://berry74.com">
+        <fileTransfer rootFolder="/public_html/new" host="www.berry74.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
