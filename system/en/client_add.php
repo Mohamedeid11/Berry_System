@@ -136,7 +136,7 @@ if (!loggedin()) {
         <script>
             $(document).ready(function () {
                 $("#cssmenu ul>li").removeClass("active");
-                $("#item7").addClass("active");
+                $("#item11").addClass("active");
             });
         </script>
 

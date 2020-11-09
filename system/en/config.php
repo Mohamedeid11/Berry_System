@@ -2,7 +2,7 @@
 
 session_start();
 
-$sit_url = "http://www.berry74.com/new/system";
+$sit_url = "http://www.berry74.com/constracting/system";
 date_default_timezone_set('Asia/Bahrain');
 //ini_set('session.gc_maxlifetime', 3600);
 

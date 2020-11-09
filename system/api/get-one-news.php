@@ -41,13 +41,14 @@ if (isset($_GET['news_id']) && $_GET['lang'] != '') {
             $news = array();
             $news["id"] = $row["id"];
             if ($lang == "ar") {
-                $news["title_ar"] = $row["title_ar"];
-                $news["news_desc_ar"] = $row["subject_ar"];
+                $news["title"] = $row["title_ar"];
+                $news["subject"] = $row["subject_ar"];
             } else {
-                $news["title_en"] = $row["title_en"];
-                $news["subject_en"] = $row["subject_en"];
+                $news["title"] = $row["title_en"];
+                $news["subject"] = $row["subject_en"];
             }
             $news["photo"] = $row["photo"];
+            $news["date"] = $row["date"];
 
 
 

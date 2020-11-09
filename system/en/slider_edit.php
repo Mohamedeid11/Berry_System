@@ -3,6 +3,9 @@ include("config.php");
 if (!loggedin()) {
     header("Location: login.php");
     exit();
+}if (($_SESSION['cat_and_sub'] != '1')) {
+    header("Location: error.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -92,10 +95,10 @@ if (!loggedin()) {
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Slider </h4>
+                                <h4 class="page-title"><?=lang('slider')?> </h4>
                                 <ol class="breadcrumb">
-                                    <li><a href="slider_view.php">Slider  </a></li>
-                                    <li class="active"> Update Slider  </li>
+                                    <li><a href="slider_view.php"><?=lang('slider')?>  </a></li>
+                                    <li class="active"> <?=lang('update_slider')?>  </li>
                                 </ol>
                             </div>
                         </div>
@@ -125,23 +128,23 @@ if (!loggedin()) {
                                         <div class="card-box"> 									
                                             <form method="POST" enctype="multipart/form-data" data-parsley-validate novalidate>
                                                 <div class="form-group m-b-3">
-                                                    <label for="sub_cat_desc"> Slider Text In English</label>
+                                                    <label for="sub_cat_desc"> <?=lang('english_text_slider')?></label>
                                                     <textarea class="form-control" rows="3" name="desc_en"  id="desc_en" minlength="3" maxlength="1000" ><?= $desc_en?></textarea>
                                                 </div>
 
                                                 <div class="form-group m-b-3">
-                                                    <label for="sub_cat_desc"> Slider Text In Arabic</label>
+                                                    <label for="sub_cat_desc"> <?=lang('arabic_text_slider')?></label>
                                                     <textarea class="form-control" rows="3" name="desc_ar"  id="desc_ar" minlength="3" maxlength="1000" ><?= $desc_ar?></textarea>
                                                 </div>
                                                 <div class="form-group m-b-3">
-                                                    <label for="service_name">Slider Link </label>
+                                                    <label for="service_name"><?=lang('slider_link')?> </label>
                                                     <input type="text" name="link"  id="link" parsley-trigger="change"  placeholder="Slider Link" class="form-control" value="<?= $link ;?>">
                                                 </div>
                                                 <input type="hidden" name="sliderID_update" id="sliderID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                                 <input type="hidden" name="image_ext_old" value="<?php echo $image; ?>" />
                                                 <div class="form-group m-b-3">
-                                                    <label class="control-label"> Image slider </label>
+                                                    <label class="control-label"> <?=lang('image')?> </label>
                                                     </br>
                                                     <div class="gal-detail thumb getImage">
                                                         <a href="<?php echo $image; ?>" class="image-popup" title="image">
@@ -223,6 +226,12 @@ if (!loggedin()) {
                 width: 'auto',
                 allowClear: true
             });
+
+            $(document).ready(function () {
+                $("#cssmenu ul>li").removeClass("active");
+                $("#item2").addClass("active");
+            });
+
         </script>
 
     </body>

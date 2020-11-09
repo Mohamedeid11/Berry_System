@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Location </h4>
+                        <h4 class="page-title"><?= lang('project_location')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="project_location_view.php">Project Location </a></li>
-                            <li class="active">Project Location  </li>
+                            <li><a href="project_location_view.php"><?= lang('project_location')?></a></li>
+                            <li class="active"><?= lang('project_location')?></li>
                         </ol>
                     </div>
                 </div>
@@ -47,11 +47,11 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Project Name English</th>
-                                    <th>Project Name Arabic</th>
-                                    <th> Project Location</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?= lang('project_name_english')?></th>
+                                    <th><?= lang('project_name_arabic')?></th>
+                                    <th> <?= lang('project_location')?></th>
+                                    <th><?= lang('date_add')?> </th>
+                                    <th> <?= lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -64,7 +64,8 @@ if (!loggedin()) {
                                 while ($row = mysqli_fetch_assoc($query)) {
                                     $id = $row['id'];
                                     $project_id = $row['project_id'];
-                                    $location = $row['location'];
+                                    $location_lat = $row['lat'];
+                                    $location_long = $row['long'];
                                     $date = $row['date'];
                                     ?>
                                     <tr class="gradeX">
@@ -87,7 +88,7 @@ if (!loggedin()) {
                                         </td>
 
                                         <td>
-                                            <a href=" <?= $location ?> " target="_blank" >View Map</a>
+                                            <a target="_blank" href="https://www.google.com/maps/@<?= $location_lat ?>,<?= $location_long ?>,17z" class="btn map-link">View Map</a>
                                         </td>
                                         <td><?= $date; ?></td>
                                         <td class="actions">
@@ -173,8 +174,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item9").addClass("active");
     });
 </script>
 

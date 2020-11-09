@@ -44,9 +44,9 @@ if (isset($_GET['lang']) != '') {
             $slider = array();
             $slider["id"] = $row["id"];
             if ($lang == "ar") {
-                $slider["desc_ar"] = $row["desc_ar"];
+                $slider["desc"] = $row["desc_ar"];
             } else {
-                $slider["desc_en"] = $row["desc_en"];
+                $slider["desc"] = $row["desc_en"];
             }
             $slider["image"] = $row["image"];
             $slider_id = $row["id"];

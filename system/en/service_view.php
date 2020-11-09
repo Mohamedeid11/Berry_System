@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Services </h4>
+                        <h4 class="page-title"><?=lang('project_service')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="service_view.php">Project Services </a></li>
-                            <li class="active">Project Services  </li>
+                            <li><a href="service_view.php"><?=lang('project_service')?></a></li>
+                            <li class="active"><?=lang('project_service')?></li>
                         </ol>
                     </div>
                 </div>
@@ -46,12 +46,12 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Project Name English</th>
-                                    <th>Project Name Arabic</th>
-                                    <th> Project Service English</th>
-                                    <th> Project Service Arabic</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?=lang('project_name_english')?></th>
+                                    <th><?=lang('project_name_arabic')?></th>
+                                    <th> <?=lang('project_service_english')?></th>
+                                    <th> <?=lang('project_service_arabic')?></th>
+                                    <th> <?=lang('date_add')?></th>
+                                    <th> <?=lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -95,7 +95,7 @@ if (!loggedin()) {
                                         </td>
                                         <td><?= $date; ?></td>
                                         <td class="actions">
-                                            <a href="service_edit.php?projectID=<?= $id; ?>" class="on-default"><i class="fa fa-pencil"></i></a>
+                                            <a href="service_edit.php?serviceID=<?= $id; ?>" class="on-default"><i class="fa fa-pencil"></i></a>
                                         </td>
                                         <td class="actions">
                                             <a href="<?= $id; ?>" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
@@ -150,7 +150,12 @@ if (!loggedin()) {
 </div>
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
-
+<script>
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item5").addClass("active");
+    });
+</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('body').on('click', '.on-default', function () {
@@ -174,12 +179,7 @@ if (!loggedin()) {
     });
 </script>
 
-<script>
-    $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
-    });
-</script>
+
 
 </body>
 </html>

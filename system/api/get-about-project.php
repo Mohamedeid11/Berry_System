@@ -37,22 +37,25 @@ if (isset($_GET['project_id']) && $_GET['lang'] != '') {
         $response["project"] = array();
 
         while ($row = mysql_fetch_array($result)) {
+                // temp user array
+                $project = array();
 
-            // temp user array
-            $project = array();
-            $project["id"] = $row["id"];
-            if ($lang == "ar") {
-                $project["desc_ar"] = $row["desc_ar"];
-            } else {
-                $project["desc_en"] = $row["desc_en"];
+                $project["id"] = $row["id"];
+                if ($lang == "ar") {
+                    $project["project_name"] = get_project_name_ar_from_id($project_id);
+                    $project["desc"] = $row["desc_ar"];
+
+                } else {
+                    $project["project_name"] = get_project_name_en_from_id($project_id);
+                    $project["desc"] = $row["desc_en"];
+                }
+                $project["project_id"] = $row["project_id"];
+
+                $project["evaluate"] = resume_evaluate($project_id);
+
+                // push single project into final response array
+                array_push($response["project"], $project);
             }
-            $project["project_id"] = $row["project_id"];
-
-            $project["evaluate"] = resume_evaluate($project_id);
-
-            // push single project into final response array
-            array_push($response["project"], $project);
-        }
         // success
         $response["success"] = 1;
 

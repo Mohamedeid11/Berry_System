@@ -15,7 +15,7 @@ error_reporting(0);
         }
     }
 
-    $base_url = "http://www.promosbh.com/newsite/";
+    $base_url = "http://berry74.com/constracting/";
 
     $lang_cookie = 'en';
     if (isset($_COOKIE['site_lang'])) {

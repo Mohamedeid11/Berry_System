@@ -31,12 +31,12 @@ if (!loggedin()) {
 
     if (isset($_POST['project_update'])) {
 
-        $projectID_update = $_POST['projectID_update'];
-        $project_name_en = $_POST['project_name_en'];
-        $project_name_ar = $_POST['project_name_ar'];
-        $project_desc_en = $_POST['project_desc_en'];
-        $project_desc_ar = $_POST['project_desc_ar'];
-        $client_update = $_POST['client_id_update'];
+        $projectID_update = mysqli_real_escape_string($con, trim($_POST['projectID_update']));
+        $project_name_en = mysqli_real_escape_string($con, trim($_POST['project_name_en']));
+        $project_name_ar = mysqli_real_escape_string($con, trim($_POST['project_name_ar']));
+        $project_desc_en = mysqli_real_escape_string($con, trim($_POST['project_desc_en']));
+        $project_desc_ar = mysqli_real_escape_string($con, trim($_POST['project_desc_ar']));
+        $client_update = mysqli_real_escape_string($con, trim($_POST['client_id_update']));
 
 
         $errors = array();
@@ -96,10 +96,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project  </h4>
+                        <h4 class="page-title"><?= lang('projects')?>  </h4>
                         <ol class="breadcrumb">
-                            <li><a href="projects_view.php">Project  </a></li>
-                            <li class="active"> Update Project  </li>
+                            <li><a href="projects_view.php"><?= lang('projects')?>  </a></li>
+                            <li class="active"> <?= lang('update_project')?>  </li>
                         </ol>
                     </div>
                 </div>
@@ -136,27 +136,27 @@ if (!loggedin()) {
                                         <input type="hidden" name="projectID_update" id="projectID_update" parsley-trigger="change" required value="<?php echo $project_id; ?>" class="form-control">
 
                                         <div class="form-group col-md-5">
-                                            <label for="project_name"> Project Name English  </label>
+                                            <label for="project_name"> <?= lang('project_name_english')?> </label>
                                             <input type="text" name="project_name_en" parsley-trigger="change" required placeholder="Name EN" class="form-control" id="project_name_en" value="<?php echo $project_name_en; ?>">
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="project_name_ar"> Project Name Arabic  </label>
+                                            <label for="project_name_ar"> <?= lang('project_name_arabic')?> </label>
                                             <input type="text" name="project_name_ar" parsley-trigger="change"  placeholder="Name AR" class="form-control" id="project_name_ar" value="<?php echo $project_name_ar; ?>">
                                         </div>
 
                                         <div class="clearfix"></div>
 
                                         <div class="form-group col-md-5">
-                                            <label for="project_desc_en"> English Description</label>
+                                            <label for="project_desc_en">  <?= lang('project_desc_english')?></label>
                                             <textarea class="form-control" rows="3" name="project_desc_en"  minlength="3" maxlength="1000" ><?php echo $project_desc_en; ?></textarea>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="project_desc_ar"> Arabic Description</label>
+                                            <label for="project_desc_ar">  <?= lang('project_desc_arabic')?></label>
                                             <textarea class="form-control" rows="3" name="project_desc_ar"  minlength="3" maxlength="1000" ><?php echo $project_desc_ar; ?></textarea>
                                         </div>
 
-                                        <div class="form-group   m-b-0">
-                                            <label for="parent_category_id_update">Project  </label>
+                                        <div class="form-group   col-md-5">
+                                            <label for="parent_category_id_update"><?= lang('client_name')?>  </label>
                                             <select class="form-control select2me" name="client_id_update" id="client_id_update" required parsley-trigger="change">
                                                 <option value="" >Choose</option>
                                                 <?php
@@ -175,7 +175,7 @@ if (!loggedin()) {
                                             </select>
                                         </div>
                                         <div class="clearfix"></div>
-                                        <label for="userName">Image  <a class="showImg">edit?</a> </label>
+                                        <label for="userName"><?= lang('image')?>  <a class="showImg"><?= lang('edit')?></a> </label>
                                         <input type="hidden" name="image_ext_old" value="<?= $project_image; ?>" />
 
                                         <div class="gal-detail thumb getImage">
@@ -185,7 +185,7 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="form-group m-b-0">
-                                            <label class="control-label">Project Image </label>
+                                            <label class="control-label"><?= lang('image')?> </label>
                                             <input type="file" name="image_update" id="image_update" class="filestyle" data-buttonname="btn-primary">
                                         </div>
 
@@ -224,6 +224,11 @@ if (!loggedin()) {
         placeholder: "Select",
         width: 'auto',
         allowClear: true
+    });
+
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item3").addClass("active");
     });
 </script>
 

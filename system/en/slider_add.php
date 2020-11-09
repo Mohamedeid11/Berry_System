@@ -3,6 +3,9 @@ include("config.php");
 if (!loggedin()) {
     header("Location: login.php");
     exit();
+}if (($_SESSION['cat_and_sub'] != '1')) {
+    header("Location: error.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -56,10 +59,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Sliders  </h4>
+                        <h4 class="page-title"><?=lang('slider')?>  </h4>
                         <ol class="breadcrumb">
-                            <li><a href="slider_view.php">Sliders </a></li>
-                            <li class="active"> Add New Slider  </li>
+                            <li><a href="slider_view.php"><?=lang('slider')?> </a></li>
+                            <li class="active"> <?=lang('add_new_slider')?>  </li>
                         </ol>
                     </div>
                 </div>
@@ -69,21 +72,21 @@ if (!loggedin()) {
                         <div class="card-box">
                             <form method="POST" enctype="multipart/form-data" data-parsley-validate novalidate>
                                 <div class="form-group m-b-3">
-                                    <label for="sub_cat_desc"> Slider Text In English</label>
+                                    <label for="sub_cat_desc"> <?=lang('english_text_slider')?> </label>
                                     <textarea class="form-control" rows="3" name="desc_en" id="desc_en" minlength="3" maxlength="1000" ></textarea>
                                 </div>
                                 <div class="form-group m-b-3">
-                                    <label for="sub_cat_desc"> Slider Text In Arabic</label>
+                                    <label for="sub_cat_desc"> <?=lang('arabic_text_slider')?> </label>
                                     <textarea class="form-control" rows="3" name="desc_ar"  id="desc_ar" minlength="3" maxlength="1000" ></textarea>
                                 </div>
 
                                 <br>
                                 <div class="form-group m-b-3">
-                                    <label for="service_name">Slider Link </label>
+                                    <label for="service_name"><?=lang('slider_link')?>  </label>
                                     <input type="text" name="link"  id="link" parsley-trigger="change"  placeholder="Slider Link" class="form-control">
                                 </div>
                                 <div class="form-group m-b-3">
-                                    <label class="control-label">Image</label>
+                                    <label class="control-label"><?=lang('image')?> </label>
                                     <input type="file" name="image" id="image" class="filestyle" data-buttonname="btn-primary">
                                 </div>
 
@@ -119,5 +122,11 @@ if (!loggedin()) {
 </div>
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
+<script>
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item2").addClass("active");
+    });
+</script>
 </body>
 </html>

@@ -3,65 +3,65 @@
 </script>
 
 <!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.min.js"></script>
 
-<script src="assets/js/custom.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/custom.js"></script>
 
-<script src="assets/js/ion.sound.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/ion.sound.js"></script>
 
-<script src="assets/js/bootstrap.min.js"></script>
-
-
-<script src="assets/plugins/bootbox/bootbox.min.js"></script>
-<script src="assets/plugins/bootbox/ui-alert-dialog-api.js"></script>
-
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/waves.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/bootstrap.min.js"></script>
 
 
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootbox/bootbox.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootbox/ui-alert-dialog-api.js"></script>
 
-<script src="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
-<script src="assets/plugins/switchery/dist/switchery.min.js"></script>
-<script type="text/javascript" src="assets/plugins/multiselect/js/jquery.multi-select.js"></script>
-<script type="text/javascript" src="assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
-<script src="assets/plugins/select2/select2.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>		
-<script src="assets/plugins/autocomplete/jquery-ui.min.js" type="text/javascript"></script>		
-
-<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>		
-<script src="assets/plugins/switchery/js/switchery.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/detect.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/fastclick.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.slimscroll.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.blockUI.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/waves.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/wow.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.nicescroll.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.scrollTo.min.js"></script>
 
 
-<script src="assets/plugins/notifyjs/dist/notify.min.js"></script>
-<script src="assets/plugins/notifications/notify-metro.js"></script>		
 
-<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/switchery/dist/switchery.min.js"></script>
+<script type="text/javascript" src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/multiselect/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/select2/select2.min.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/autocomplete/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/switchery/js/switchery.min.js"></script>
+
+
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/notifyjs/dist/notify.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/notifications/notify-metro.js"></script>
+
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/peity/jquery.peity.min.js"></script>
 
 <!-- jQuery  -->
-<script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
-<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/waypoints/lib/jquery.waypoints.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/counterup/jquery.counterup.min.js"></script>
 
 
 
-<script src="assets/plugins/morris/morris.min.js"></script>
-<script src="assets/plugins/raphael/raphael-min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/morris/morris.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/raphael/raphael-min.js"></script>
 
-<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-<!--<script src="assets/plugins/dropzone/dropzone.js"></script>-->
-<script src="assets/plugins/dropzone/dropzone.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/jquery-knob/jquery.knob.js"></script>
+<!--<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/dropzone/dropzone.js"></script>-->
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/dropzone/dropzone.min.js"></script>
 
 
-<script src="assets/js/jquery.core.js"></script>
-<script src="assets/js/jquery.app.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.core.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/js/jquery.app.js"></script>
 
 
 
@@ -78,18 +78,18 @@
 </script>
 
 
-<script type="text/javascript" src="assets/plugins/parsleyjs/dist/parsley.min.js"></script>
+<script type="text/javascript" src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/parsleyjs/dist/parsley.min.js"></script>
 
 
 <script type="text/javascript">
 //    $(document).ready(function () {
 //        $('form').parsley();
 //    });
-</script>	
+</script>
 
 
-<script type="text/javascript" src="assets/plugins/isotope/dist/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/isotope/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 
 <script type="text/javascript">
     $(window).load(function () {
@@ -131,7 +131,7 @@
             }
         });
     });
-</script>		
+</script>
 
 
 <script>
@@ -263,14 +263,14 @@
 </script>
 
 <!-- Examples -->
-<script src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-<script src="assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script> 
-<script src="assets/plugins/datatables1/dataTables.bootstrap.js"></script>
-<script src="assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
-<script src="assets/plugins/tiny-editable/numeric-input-example.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/datatables1/dataTables.bootstrap.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/tiny-editable/mindmup-editabletable.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/tiny-editable/numeric-input-example.js"></script>
 
 
-<script src="assets/pages/datatables.editable.init.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/pages/datatables.editable.init.js"></script>
 
 <script>
     $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
@@ -278,7 +278,7 @@
 </script>
 
 <!-- Sweet-Alert  -->
-<script src="assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
-<script src="assets/pages/jquery.sweet-alert.init.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/plugins/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets_<?= $_COOKIE['site_lang'] ?>/pages/jquery.sweet-alert.init.js"></script>
 
 

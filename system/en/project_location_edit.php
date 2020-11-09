@@ -33,7 +33,8 @@ if (!loggedin()) {
 
         $projectID_update = $_POST['projectID_update'];
         $project_id = $_POST['project_id_update'];
-        $location = $_POST['location'];
+        $location_lat = $_POST['lat'];
+        $location_long = $_POST['long'];
 
         $errors = array();
 
@@ -44,7 +45,7 @@ if (!loggedin()) {
             }
         }
         else {
-            $update = $con->query("UPDATE `project_location` SET `project_id`='$project_id' ,`location`='$location' WHERE `id`='$projectID_update'");
+            $update = $con->query("UPDATE `project_location` SET `project_id`='$project_id' ,`lat`='$location_lat',`long`='$location_long' WHERE `id`='$projectID_update'");
 
             echo get_success("Successfully Updated");
             echo "<meta http-equiv='refresh' content='0'>";
@@ -62,10 +63,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Location  </h4>
+                        <h4 class="page-title"><?= lang('project_location')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="project_location_view.php">Project Location  </a></li>
-                            <li class="active"> Update Project Location  </li>
+                            <li><a href="project_location_view.php"><?= lang('project_location')?></a></li>
+                            <li class="active"><?= lang('update_project_location')?></li>
                         </ol>
                     </div>
                 </div>
@@ -82,7 +83,8 @@ if (!loggedin()) {
 
                     $id = $row_select['id'];
                     $project_id = $row_select['project_id'];
-                    $location = $row_select['location'];
+                    $location_lat = $row_select['lat'];
+                    $location_long = $row_select['long'];
 
 
                     if ($query_select) {
@@ -94,7 +96,7 @@ if (!loggedin()) {
                                         <input type="hidden" name="projectID_update" id="projectID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                         <div class="form-group   m-b-0">
-                                            <label for="parent_category_id_update">Project  </label>
+                                            <label for="parent_category_id_update"><?= lang('projects')?></label>
                                             <select class="form-control select2me" name="project_id_update" id="parent_category_id" required parsley-trigger="change">
                                                 <option value="" >Choose</option>
                                                 <?php
@@ -114,15 +116,19 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc"> English Description</label>
-                                            <input type="text" class="form-control" rows="3" name="location"  minlength="3" maxlength="1000"  placeholder="Input The Project Link" value="<?= $location ;?>">
+                                            <label for="sub_cat_desc"><?= lang('location_lat')?></label>
+                                            <input type="text" class="form-control" rows="3" name="lat"  minlength="3" maxlength="1000"  placeholder="Input The Project Location Lat" value="<?= $location_lat ;?>">
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="sub_cat_desc"><?= lang('location_long')?></label>
+                                            <input type="text" class="form-control" rows="3" name="long"  minlength="3" maxlength="1000"  placeholder="Input The Project location Long" value="<?= $location_long ;?>">
                                         </div>
 
                                         <div class="clearfix"></div>
 
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="project_location_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="project_location_update" id="updateMenu"><?= lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -151,10 +157,9 @@ if (!loggedin()) {
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
 <script>
-    $('.select2m').select2({
-        placeholder: "Select",
-        width: 'auto',
-        allowClear: true
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item9").addClass("active");
     });
 </script>
 

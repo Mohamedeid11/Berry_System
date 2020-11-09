@@ -42,8 +42,10 @@ if (isset($_GET['lang']) && $_GET['lang'] != '') {
             $about["id"] = $row["id"];
             $about["image"] = $row["image"];
             if ($lang == "ar") {
+                $about["project_name"] = $row["title"];
                 $about["content"] = $row["content"];
             } else {
+                $about["project_name"] = $row["title_en"];
                 $about["content"] = $row["content_en"];
             }
             // push single product into final response array

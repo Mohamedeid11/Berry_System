@@ -788,4 +788,29 @@ function get_client_cart_id($client_id) {
     return $cart_id_final;
 }
 
+function get_project_name_en_from_id($project_id){
+
+    $query = mysql_query("SELECT * FROM `projects` WHERE `project_id`='$project_id'")or die(mysql_error());
+
+    $row = mysql_fetch_array($query);
+
+    $project_name_en = $row['project_name_en'];
+
+
+    return $project_name_en;
+
+}
+function get_project_name_ar_from_id($project_id){
+
+    $query = mysql_query("SELECT * FROM `projects` WHERE `project_id`='$project_id'")or die(mysql_error());
+
+    $row = mysql_fetch_array($query);
+
+    $project_name_ar = $row['project_name_ar'];
+
+
+    return $project_name_ar;
+
+}
+
 ?>

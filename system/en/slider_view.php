@@ -3,6 +3,9 @@ include("config.php");
 if (!loggedin()) {
     header("Location: login.php");
     exit();
+}if (($_SESSION['cat_and_sub'] != '1')) {
+    header("Location: error.php");
+    exit();
 }
 ?>
 
@@ -32,10 +35,10 @@ if (!loggedin()) {
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">sliders </h4>
+                                <h4 class="page-title"><?=lang('slider')?> </h4>
                                 <ol class="breadcrumb">
-                                    <li><a href="slider_view.php">sliders </a></li>
-                                    <li class="active">sliders  </li>
+                                    <li><a href="slider_view.php"><?=lang('slider')?> </a></li>
+                                    <li class="active"><?=lang('slider')?>  </li>
                                 </ol>
                             </div>
                         </div>
@@ -47,9 +50,9 @@ if (!loggedin()) {
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th> Image </th>
-                                                <th> Date Added </th>
-                                                <th> Action </th>
+                                                <th> <?=lang('image')?> </th>
+                                                <th> <?=lang('date_add')?> </th>
+                                                <th> <?=lang('action')?> </th>
 
                                             </tr>
                                         </thead>
@@ -124,8 +127,8 @@ if (!loggedin()) {
 
         <script>
             $(document).ready(function () {
-                $("#cssslider ul>li").removeClass("active");
-                $("#item5").addClass("active");
+                $("#cssmenu ul>li").removeClass("active");
+                $("#item2").addClass("active");
             });
         </script>		
 

@@ -60,20 +60,20 @@ if (loggedin()) {
         <div class="wrapper-page">
             <div class=" card-box">
                 <div class="panel-heading"> 
-                    <h3 class="text-center"> Login <strong class="text-custom"> Berry </strong> </h3>
+                    <h3 class="text-center"> <?=lang('login')?> <strong class="text-custom"> <?=lang('berry')?> </strong> </h3>
                 </div> 
                 <div class="panel-body">
                     <form class="form-horizontal m-t-20" action="" method="POST">
 
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" name="username" required="" placeholder="User Name">
+                                <input class="form-control" type="text" name="username" required="" placeholder="<?=lang('user_name')?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" name="password" required="" placeholder="Password ">
+                                <input class="form-control" type="password" name="password" required="" placeholder="<?=lang('password')?> ">
                             </div>
                         </div>
 
@@ -82,7 +82,7 @@ if (loggedin()) {
                                 <div class="checkbox checkbox-primary">
                                     <input id="checkbox-signup" type="checkbox">
                                     <label for="checkbox-signup">
-                                        Remember
+                                        <?=lang('remember_me')?>
                                     </label>
                                 </div>
 
@@ -91,7 +91,7 @@ if (loggedin()) {
 
                         <div class="form-group text-center m-t-40">
                             <div class="col-xs-12">
-                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit" name="submit">login</button>
+                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit" name="submit"><?=lang('login')?></button>
                             </div>
                         </div>
 

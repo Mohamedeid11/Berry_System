@@ -93,10 +93,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Image  </h4>
+                        <h4 class="page-title"><?=lang('project_image')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="project_images_view.php">Project Image  </a></li>
-                            <li class="active"> Update Project Image  </li>
+                            <li><a href="project_images_view.php"><?=lang('project_image')?> </a></li>
+                            <li class="active"><?=lang('update_project_image')?></li>
                         </ol>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ if (!loggedin()) {
                                         <input type="hidden" name="imagesID_update" id="imagesID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                         <div class="form-group   m-b-0">
-                                            <label for="parent_category_id_update">Project  </label>
+                                            <label for="parent_category_id_update"><?=lang('projects')?></label>
                                             <select class="form-control select2me" name="project_id_update" id="parent_category_id" required parsley-trigger="change">
                                                 <option value="" >Choose</option>
                                                 <?php
@@ -155,13 +155,13 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="form-group m-b-0">
-                                            <label class="control-label">News Image </label>
+                                            <label class="control-label"><?=lang('image')?> </label>
                                             <input type="file" name="image_update" id="image_update" class="filestyle" data-buttonname="btn-primary">
                                         </div>
 
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="images_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="images_update" id="updateMenu"><?=lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -194,6 +194,11 @@ if (!loggedin()) {
         placeholder: "Select",
         width: 'auto',
         allowClear: true
+    });
+
+    $(document).ready(function () {
+        $("#cssslider ul>li").removeClass("active");
+        $("#item6").addClass("active");
     });
 </script>
 

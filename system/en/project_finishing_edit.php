@@ -47,7 +47,7 @@ if (!loggedin()) {
             }
         }
         else {
-            $update = $con->query("UPDATE `project_finishing` SET `project_id`='$project_id' ,`in_desc_en`='$in_desc_en' , `in_desc_ar`='$in_desc_ar',`out_desc_en`='$out_desc_en' , `out_desc_ar`='$out_desc_en' WHERE `id`='$projectID_update'");
+            $update = $con->query("UPDATE `project_finishing` SET `project_id`='$project_id' ,`in_desc_en`='$in_desc_en' , `in_desc_ar`='$in_desc_ar',`out_desc_en`='$out_desc_en' , `out_desc_ar`='$out_desc_ar' WHERE `id`='$projectID_update'");
 
             echo get_success("Successfully Updated");
             echo "<meta http-equiv='refresh' content='0'>";
@@ -65,10 +65,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Finishing  </h4>
+                        <h4 class="page-title"><?=lang('project_finishing')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="project_finishing_view.php">Project Finishing  </a></li>
-                            <li class="active"> Update Project Finishing  </li>
+                            <li><a href="project_finishing_view.php"><?=lang('project_finishing')?> </a></li>
+                            <li class="active"><?=lang('update_project_finishing')?></li>
                         </ol>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ if (!loggedin()) {
                                         <input type="hidden" name="projectID_update" id="projectID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                         <div class="form-group   m-b-0">
-                                            <label for="parent_category_id_update">Project  </label>
+                                            <label for="parent_category_id_update"><?=lang('project_name_english')?>  </label>
                                             <select class="form-control select2me" name="project_id_update" id="parent_category_id" required parsley-trigger="change">
                                                 <option value="" >Choose</option>
                                                 <?php
@@ -119,36 +119,36 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="row justify-content-start ">
-                                            <label > Inside Finishing</label>
+                                            <label > <?=lang('project_finishing_inside')?></label>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc"> English Description</label>
+                                            <label for="sub_cat_desc"> <?=lang('project_finishing_in_desc_en')?></label>
                                             <textarea class="form-control" rows="3" name="in_desc_en"  minlength="3" maxlength="1000" ><?= $in_desc_en?></textarea>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc_ar"> Arabic Description</label>
+                                            <label for="sub_cat_desc_ar"><?=lang('project_finishing_in_desc_ar')?></label>
                                             <textarea class="form-control" rows="3" name="in_desc_ar"  minlength="3" maxlength="1000" ><?= $in_desc_ar?></textarea>
                                         </div>
                                         <div class="clearfix "></div>
                                         <hr>
 
                                         <div class="row justify-content-start ">
-                                            <label > Outer Finishing</label>
+                                            <label ><?=lang('project_finishing_outside')?></label>
                                         </div>
 
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc"> English Description</label>
+                                            <label for="sub_cat_desc"> <?=lang('project_finishing_out_desc_en')?></label>
                                             <textarea class="form-control" rows="3" name="out_desc_en"  minlength="3" maxlength="1000" ><?= $out_desc_en?></textarea>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc_ar"> Arabic Description</label>
+                                            <label for="sub_cat_desc_ar"><?=lang('project_finishing_out_desc_ar')?></label>
                                             <textarea class="form-control" rows="3" name="out_desc_ar"  minlength="3" maxlength="1000" ><?= $out_desc_ar?></textarea>
                                         </div>
                                         <div class="clearfix"></div>
 
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="about_project_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="about_project_update" id="updateMenu"><?=lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -177,10 +177,9 @@ if (!loggedin()) {
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
 <script>
-    $('.select2m').select2({
-        placeholder: "Select",
-        width: 'auto',
-        allowClear: true
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item7").addClass("active");
     });
 </script>
 

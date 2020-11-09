@@ -41,7 +41,8 @@ if (isset($_GET['project_id']) && $_GET['lang'] != '') {
             // temp user array
             $project = array();
             $project["id"] = $row["id"];
-            $project["location"] = $row["location"];
+            $project["location_lat"] = $row["lat"];
+            $project["location_long"] = $row["long"];
             $project["project_id"] = $row["project_id"];
 
 

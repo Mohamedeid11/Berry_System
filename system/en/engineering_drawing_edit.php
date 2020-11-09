@@ -93,10 +93,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Engineering Drawing  </h4>
+                        <h4 class="page-title"><?=lang('project_drawing')?> </h4>
                         <ol class="breadcrumb">
-                            <li><a href="engineering_drawing_view.php">Engineering Drawing  </a></li>
-                            <li class="active"> Update Engineering Drawing  </li>
+                            <li><a href="engineering_drawing_view.php"><?=lang('project_drawing')?></a></li>
+                            <li class="active"><?=lang('update_project_drawing')?> </li>
                         </ol>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ if (!loggedin()) {
                                         <input type="hidden" name="imagesID_update" id="imagesID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                         <div class="form-group   m-b-0">
-                                            <label for="parent_category_id_update">Project  </label>
+                                            <label for="parent_category_id_update"><?=lang('projects')?></label>
                                             <select class="form-control select2me" name="project_id_update" id="parent_category_id" required parsley-trigger="change">
                                                 <option value="" >Choose</option>
                                                 <?php
@@ -155,13 +155,13 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="form-group m-b-0">
-                                            <label class="control-label">News Image </label>
+                                            <label class="control-label"><?=lang('image')?> </label>
                                             <input type="file" name="image_update" id="image_update" class="filestyle" data-buttonname="btn-primary">
                                         </div>
 
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="images_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="images_update" id="updateMenu"><?=lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -190,10 +190,9 @@ if (!loggedin()) {
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
 <script>
-    $('.select2m').select2({
-        placeholder: "Select",
-        width: 'auto',
-        allowClear: true
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item8").addClass("active");
     });
 </script>
 

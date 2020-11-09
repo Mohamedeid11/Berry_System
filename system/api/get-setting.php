@@ -22,7 +22,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_unicode_ci'");
 
 // get all products from products table
 
-if (isset($_GET['lang']) && $_GET['lang'] != '') {
+if (isset($_GET['lang']) != '') {
 
     $lang = $_GET['lang'];
 
@@ -42,7 +42,13 @@ if (isset($_GET['lang']) && $_GET['lang'] != '') {
 			
 			$product["ios_version"] = $row["ios_version"];
 			$product["android_version"] = $row["android_version"];
-			$product["copyright_name"] = $row["copyright_name"];
+			$product["ios_link"] = $row["ios_link"];
+			$product["android_link"] = $row["android_link"];
+            if ($lang == "ar") {
+                $product["copyright_name"] = $row["copyright_name_ar"];
+            } else {
+                $product["copyright_name"] = $row["copyright_name_en"];
+            }
 			$product["copyright_link"] = $row["copyright_link"];
 
 			// push single product into final response array

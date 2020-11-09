@@ -94,41 +94,42 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title"> Projects  </h4>
+                        <h4 class="page-title"> <?= lang('projects')?>  </h4>
                         <ol class="breadcrumb">
-                            <li><a href="Projects_view.php">Projects </a></li>
-                            <li class="active">Add New Project  </li>
+                            <li><a href="Projects_view.php"><?= lang('projects')?> </a></li>
+                            <li class="active"><?= lang('add_new_project')?>  </li>
                         </ol>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title"><b> Add New Project   </b></h4>
+                            <h4 class="m-t-0 header-title"><b> <?= lang('add_new_project')?>  </b></h4>
                             <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" data-parsley-validate novalidate>
                                 <div class="form-group col-md-5">
-                                    <label for="project_name"> Project Name English  </label>
-                                    <input type="text" name="project_name_en" parsley-trigger="change" required placeholder="Name EN" class="form-control" id="project_name_en">
+                                    <label for="project_name"> <?= lang('project_name_english')?></label>
+                                    <input type="text" name="project_name_en" parsley-trigger="change" required placeholder="<?= lang('project_name_english')?>" class="form-control" id="project_name_en">
                                 </div>
                                 <div class="form-group col-md-5">
-                                    <label for="project_name_ar"> Project Name Arabic  </label>
-                                    <input type="text" name="project_name_ar" parsley-trigger="change"  placeholder="Name AR" class="form-control" id="project_name">
+                                    <label for="project_name_ar"> <?= lang('project_name_arabic')?></label>
+                                    <input type="text" name="project_name_ar" parsley-trigger="change"  placeholder="<?= lang('project_name_arabic')?>" class="form-control" id="project_name">
                                 </div>
 
                                 <div class="clearfix"></div>
 
                                 <div class="form-group col-md-5">
-                                    <label for="project_desc_en"> English Description</label>
+                                    <label for="project_desc_en"><?= lang('project_desc_english')?></label>
                                     <textarea class="form-control" rows="3" name="project_desc_en"  minlength="3" maxlength="1000" ></textarea>
                                 </div>
                                 <div class="form-group col-md-5">
-                                    <label for="project_desc_ar"> Arabic Description</label>
+                                    <label for="project_desc_ar"> <?= lang('project_desc_english')?></label>
                                     <textarea class="form-control" rows="3" name="project_desc_ar"  minlength="3" maxlength="1000" ></textarea>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="form-group col-md-5">
-                                    <label class="control-label">Choose Client  </label>
+                                    <label class="control-label"><?= lang('client_name')?> </label>
                                     <select class="form-control select2me" name="client_id" id="client_id" required>
+                                        <option selected='selected' value="" ><?=lang('choose')?></option>
                                         <?php
                                         $query = $con->query("SELECT * FROM `clients` ORDER BY `client_id` ASC");
                                         while ($row = mysqli_fetch_assoc($query)) {
@@ -143,7 +144,7 @@ if (!loggedin()) {
 
                                 <div class="clearfix"></div>
                                 <div class="form-group m-b-0">
-                                    <label class="control-label">Project Image</label>
+                                    <label class="control-label"><?= lang('image')?></label>
                                     <input type="file" name="project_image" id="project_image" class="filestyle" multiple data-buttonname="btn-primary">
                                 </div>
                                 <div class="form-group text-right m-b-0">

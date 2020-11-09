@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Project Finishing </h4>
+                        <h4 class="page-title"><?=lang('project_finishing')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="project_finishing_view.php">Project Finishing </a></li>
-                            <li class="active">Project Finishing  </li>
+                            <li><a href="project_finishing_view.php"><?=lang('project_finishing')?></a></li>
+                            <li class="active"><?=lang('project_finishing')?> </li>
                         </ol>
                     </div>
                 </div>
@@ -48,13 +48,13 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Project Name English</th>
-                                    <th> Inside Description English</th>
-                                    <th> Inside Description Arabic</th>
-                                    <th> Outer Description English</th>
-                                    <th> Outer Description Arabic</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?=lang('project_name_english')?></th>
+                                    <th><?=lang('project_finishing_in_desc_en')?></th>
+                                    <th><?=lang('project_finishing_in_desc_ar')?></th>
+                                    <th><?=lang('project_finishing_out_desc_en')?></th>
+                                    <th><?=lang('project_finishing_out_desc_ar')?></th>
+                                    <th><?=lang('date_add')?></th>
+                                    <th><?=lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -183,8 +183,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item7").addClass("active");
     });
 </script>
 

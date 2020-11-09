@@ -79,7 +79,7 @@ if (!loggedin()) {
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Contact Us</h4>
+                                <h4 class="page-title"><?=lang('contact_us')?></h4>
                                 <ol class="breadcrumb">
                                     <!--<li><a href="user_add.php">المديرين</a></li>-->
                                     <!--<li class="active">تعديل مدير</li>-->
@@ -113,25 +113,25 @@ if (!loggedin()) {
                                             <input type="hidden" name="id" id="id" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                             <div class="form-group">
-                                                <label for="address">Arabic Address</label>
+                                                <label for="address"><?=lang('arabic_address')?></label>
                                                 <textarea class="form-control" rows="3" name="address"  minlength="3" maxlength="1000" required=""><?php echo $address; ?></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label for="address_en">English Address</label>
+                                                <label for="address_en"><?=lang('english_address')?></label>
                                                 <textarea class="form-control" rows="3" name="address_en"  minlength="3" maxlength="1000" required=""><?php echo $address_en; ?></textarea>
                                             </div>
 
                                             <div class="form-group col-md-3">
-                                                <label for="phone">Phone</label>
+                                                <label for="phone"><?=lang('phone')?></label>
                                                 <input type="number" name="phone" id="phone" parsley-trigger="change" value="<?php echo $phone; ?>" class="form-control">
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label for="mobile">Mobile</label>
+                                                <label for="mobile"><?=lang('mobile_number')?></label>
                                                 <input type="number" name="mobile" id="mobile" parsley-trigger="change" value="<?php echo $mob; ?>" class="form-control">
                                             </div>
 
                                             <div class="form-group col-md-3">
-                                                <label for="email">Email</label>
+                                                <label for="email"><?=lang('email')?></label>
                                                 <input type="text" name="email" id="email" parsley-trigger="change" required value="<?php echo $email; ?>" class="form-control">
                                             </div>
 
@@ -153,7 +153,7 @@ if (!loggedin()) {
 
                                             <br>
                                             <div class="form-group col-md-3">
-                                                <label for="website">Website</label>
+                                                <label for="website"><?=lang('website')?></label>
                                                 <input type="text" name="website" id="website" parsley-trigger="change" required value="<?php echo $website; ?>" class="form-control">
                                             </div>
                                             <div class="clearfix"></div>
@@ -166,7 +166,7 @@ if (!loggedin()) {
                                             <br
                                             <br>
                                             <div class="form-group text-right m-b-0">
-                                                <button class="btn btn-primary waves-effect waves-light" type="submit" name="contact_update" id="contact_update">Update</button>
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit" name="contact_update" id="contact_update"><?=lang('update')?></button>
                                             </div>
                                         </form>
                                     </div>
@@ -198,7 +198,7 @@ if (!loggedin()) {
     <script>
         $(document).ready(function () {
             $("#cssmenu ul>li").removeClass("active");
-            $("#item90").addClass("active");
+            $("#item13").addClass("active");
         });
     </script>	
     <script>

@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Projects</h4>
+                        <h4 class="page-title"><?= lang('projects')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="projects_view.php">Projects </a></li>
-                            <li class="active">Projects   </li>
+                            <li><a href="projects_view.php"><?= lang('projects')?> </a></li>
+                            <li class="active"><?= lang('projects')?>   </li>
                         </ol>
                     </div>
                 </div>
@@ -46,15 +46,13 @@ if (!loggedin()) {
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Client Name</th>
-                                <th>Project Name English</th>
-                                <th>Project Name Arabic</th>
-                                <th> Project Description English</th>
-                                <th> Project Description Arabic</th>
-                                <th> Project Image</th>
-                                <th> Project Display</th>
-                                <th> Date Added </th>
-                                <th> Action </th>
+                                <th><?= lang('client_name_english')?></th>
+                                <th><?= lang('client_name_arabic')?></th>
+                                <th><?= lang('project_name_english')?></th>
+                                <th><?= lang('project_name_arabic')?></th>
+                                <th> <?= lang('image')?></th>
+                                <th> <?= lang('date_add')?></th>
+                                <th> <?= lang('action')?></th>
 
                             </tr>
                             </thead>
@@ -80,12 +78,16 @@ if (!loggedin()) {
                                     $queryB = $con->query("SELECT * FROM `clients` WHERE `client_id`='$client_id'");
 
                                     while ($row = mysqli_fetch_assoc($queryB)) {
+                                        $client_id = $row['client_id'] ;
                                         $client_name_en = $row['client_name_en'] ;
                                         $client_name_ar = $row['client_name_ar'] ;
                                     }
                                     ?>
                                     <td>
-                                        <?= $client_name_en ?> - <?= $client_name_ar ?>
+                                        <a href="client_projects_view.php?clientID=<?= $client_id; ?>"><?=$client_name_en; ?></a>
+                                    </td>
+                                    <td>
+                                        <a href="client_projects_view.php?clientID=<?= $client_id; ?>"><?=$client_name_ar; ?></a>
                                     </td>
                                     <td>
                                         <?= $project_name_en ?>
@@ -93,13 +95,6 @@ if (!loggedin()) {
 
                                     <td>
                                         <?= $project_name_ar ?>
-                                    </td>
-
-                                    <td>
-                                        <?= $project_desc_en ?>
-                                    </td>
-                                    <td>
-                                        <?= $project_desc_ar ?>
                                     </td>
                                     <td>
                                         <a href="<?php echo $project_image; ?>" class="image-popup" title="<?php echo $project_name_en; ?>">
@@ -190,8 +185,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item3").addClass("active");
     });
 </script>
 

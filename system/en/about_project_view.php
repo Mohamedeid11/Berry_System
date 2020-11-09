@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">About Project </h4>
+                        <h4 class="page-title"><?=lang('about_project')?> </h4>
                         <ol class="breadcrumb">
-                            <li><a href="about_project_view.php">About Project </a></li>
-                            <li class="active">About Project  </li>
+                            <li><a href="about_project_view.php"><?=lang('about_project')?></a></li>
+                            <li class="active"><?=lang('about_project')?> </li>
                         </ol>
                     </div>
                 </div>
@@ -44,69 +44,61 @@ if (!loggedin()) {
                     <div class="panel-body">
                         <div class="">
                             <table class="table table-striped" id="datatable-editable">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Project Name English</th>
-                                    <th>Project Name Arabic</th>
-                                    <th> Project Description English</th>
-                                    <th> Project Description Arabic</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                <div class="border">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th><?=lang('project_name_english')?></th>
+                                        <th><?=lang('project_name_arabic')?></th>
+                                        <th> <?=lang('date_add')?></th>
+                                        <th> <?=lang('action')?> </th>
 
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                global $con;
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    global $con;
 
-                                $query = $con->query("SELECT * FROM `about_project` ORDER BY `id` ASC");
-                                $x = 1;
-                                while ($row = mysqli_fetch_assoc($query)) {
-                                    $id = $row['id'];
-                                    $project_id = $row['project_id'];
-                                    $desc_en = $row['desc_en'];
-                                    $desc_ar = $row['desc_ar'];
-                                    $date = $row['date'];
-                                    ?>
-                                    <tr class="gradeX">
-                                        <td><?php echo $x; ?></td>
-                                        <?php
+                                    $query = $con->query("SELECT * FROM `about_project` ORDER BY `id` ASC");
+                                    $x = 1;
+                                    while ($row = mysqli_fetch_assoc($query)) {
+                                        $id = $row['id'];
+                                        $project_id = $row['project_id'];
+                                        $desc_en = $row['desc_en'];
+                                        $desc_ar = $row['desc_ar'];
+                                        $date = $row['date'];
+                                        ?>
+                                        <tr class="gradeX">
+                                            <td><?php echo $x; ?></td>
+                                            <?php
                                             $queryB = $con->query("SELECT * FROM `projects` WHERE `project_id`='$project_id'");
 
                                             while ($row = mysqli_fetch_assoc($queryB)) {
                                                 $project_name_en = $row['project_name_en'] ;
                                                 $project_name_ar = $row['project_name_ar'] ;
-                                        ?>
-
-                                        <td>
-                                            <?= $project_name_en ?>
-                                        </td>
-
-                                        <td>
-                                            <?= $project_name_ar ?>
-                                        </td>
-
-                                        <td>
-                                            <?= $desc_en ?>
-                                        </td>
-                                        <td>
-                                            <?= $desc_ar ?>
-                                        </td>
-                                        <td><?= $date; ?></td>
-                                        <td class="actions">
-                                            <a href="about_project_edit.php?projectID=<?= $id; ?>" class="on-default"><i class="fa fa-pencil"></i></a>
-                                        </td>
-                                        <td class="actions">
-                                            <a href="<?= $id; ?>" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <?
                                             }
-                                    $x++;
-                                }
-                                ?>
+                                            ?>
 
+                                            <td>
+                                                <?= $project_name_en ?>
+                                            </td>
+                                            <td>
+                                                <?= $project_name_ar ?>
+                                            </td>
+                                            </td>
+                                            <td><?= $date; ?></td>
+                                            <td class="actions">
+                                                <a href="about_project_edit.php?projectID=<?= $id; ?>" class="on-default"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                            <td class="actions">
+                                                <a href="<?= $id; ?>" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                        $x++;
+                                    }
+                                    ?>
+                                </div>
                                 </tbody>
                             </table>
                         </div>
@@ -178,8 +170,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item4").addClass("active");
     });
 </script>
 

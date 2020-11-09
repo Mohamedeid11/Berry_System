@@ -35,12 +35,23 @@ if (!loggedin()) {
             if (isset($_POST['setting_update'])) {
 
                 $id = $_POST['id'];
+                $android_version = $_POST['android_version'];
+                $ios_version = $_POST['ios_version'];
+                $ios_link = $_POST['ios_link'];
+                $android_link = $_POST['android_link'];
+                $copyright_name_en=$_POST['copyright_name_en'];
+                $copyright_name_ar=$_POST['copyright_name_ar'];
+                $copyright_link=$_POST['copyright_link'];
 
-                $footer_caption=$_POST['footer_caption'];
-                $footer_caption_en=$_POST['footer_caption_en'];
 
 
-                $update = $con->query("UPDATE `setting` SET `footer_caption_en`='$footer_caption_en',`footer_caption`='$footer_caption'WHERE `id`='$id'");
+                $update = $con->query("UPDATE `setting` SET `android_version`='$android_version',
+                                                                `ios_version`='$ios_version',
+                                                                `ios_link`='$ios_link',
+                                                                `android_link`='$android_link',
+                                                                `copyright_name_en`='$copyright_name_en',
+                                                                `copyright_name_ar`='$copyright_name_ar',
+                                                                `copyright_link`='$copyright_link'WHERE `id`='$id'");
                 if ($update) {
                     echo get_success("Successfully Updated");
                 } else {
@@ -58,7 +69,7 @@ if (!loggedin()) {
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Setting</h4>
+                                <h4 class="page-title"><?=lang('settings')?></h4>
                                 <ol class="breadcrumb">
                                     <!--<li><a href="user_add.php">المديرين</a></li>-->
                                     <!--<li class="active">تعديل مدير</li>-->
@@ -72,10 +83,14 @@ if (!loggedin()) {
                         $query_select = $con->query("SELECT * FROM `setting` order by id desc");
 
                         $row_select = mysqli_fetch_array($query_select);
-
                         $id = $row_select['id'];
-                        $footer_caption=$row_select['footer_caption'];
-                        $footer_caption_en=$row_select['footer_caption_en'];
+                        $android_version = $row_select['android_version'];
+                        $ios_version = $row_select['ios_version'];
+                        $ios_link = $row_select['ios_link'];
+                        $android_link = $row_select['android_link'];
+                        $copyright_name_en=$row_select['copyright_name_en'];
+                        $copyright_name_ar=$row_select['copyright_name_ar'];
+                        $copyright_link=$row_select['copyright_link'];
 
                         if ($query_select) {
                             ?>
@@ -85,17 +100,39 @@ if (!loggedin()) {
                                         <form method="POST" enctype="multipart/form-data" data-parsley-validate novalidate>
                                             <input type="hidden" name="id" id="id" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
                                             <div class="form-group">
-                                                <label> footer english caption </label>
-                                                <input type="text" value="<?php echo $footer_caption_en; ?>" name="footer_caption_en" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                                <label> <?=lang('android_version')?></label>
+                                                <input type="text" value="<?php echo $android_version; ?>" name="android_version" parsley-trigger="change"  placeholder="footer caption" class="form-control">
                                             </div>
 
                                             <div class="form-group">
-                                                <label> footer arabic caption </label>
-                                                <input type="text" value="<?php echo $footer_caption; ?>" name="footer_caption" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                                <label> <?=lang('ios_version')?></label>
+                                                <input type="text" value="<?php echo $ios_version; ?>" name="ios_version" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> <?=lang('ios_link')?> </label>
+                                                <input type="text" value="<?php echo $ios_link; ?>" name="ios_link" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>  <?=lang('android_link')?></label>
+                                                <input type="text" value="<?php echo $android_link; ?>" name="android_link" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> <?=lang('english_footer_caption')?></label>
+                                                <input type="text" value="<?php echo $copyright_name_en; ?>" name="copyright_name_en" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> <?=lang('arabic_footer_caption')?></label>
+                                                <input type="text" value="<?php echo $copyright_name_ar; ?>" name="copyright_name_ar" parsley-trigger="change"  placeholder="footer caption" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> <?=lang('website')?> </label>
+                                                <input type="text" value="<?php echo $copyright_link; ?>" name="copyright_link" parsley-trigger="change"  placeholder="footer caption" class="form-control">
                                             </div>
                                             <br>
                                             <div class="form-group text-right m-b-0">
-                                                <button class="btn btn-primary waves-effect waves-light" type="submit" name="setting_update" id="updateSetting">Update</button>
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit" name="setting_update" id="updateSetting"><?=lang('update')?></button>
                                             </div>
                                         </form>
                                     </div>
@@ -202,10 +239,10 @@ if (!loggedin()) {
             width: 'auto',
             allowClear: true
         });
-        $(document).ready(function () {
-            $("#cssmenu ul>li").removeClass("active");
-            $("#item112").addClass("active");
-        });
+                $(document).ready(function () {
+                    $("#cssmenu ul>li").removeClass("active");
+                    $("#item14").addClass("active");
+                });
     </script>	
 
 </body>

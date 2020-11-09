@@ -88,46 +88,46 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title"> News  </h4>
+                        <h4 class="page-title"> <?= lang('news')?>   </h4>
                         <ol class="breadcrumb">
-                            <li><a href="news_view.php">News </a></li>
-                            <li class="active">Add News  </li>
+                            <li><a href="news_view.php"><?= lang('news')?>  </a></li>
+                            <li class="active"><?= lang('add_new_news')?>   </li>
                         </ol>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title"><b> Add News  </b></h4>
+                            <h4 class="m-t-0 header-title"><b> <?= lang('add_new_news')?>  </b></h4>
                             <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" data-parsley-validate novalidate>
                                 <div class="form-group col-md-5">
-                                    <label for="sub_cat_name">English Title  </label>
-                                    <input type="text" name="title_en" parsley-trigger="change" required placeholder="Title EN" class="form-control" id="title_en">
+                                    <label for="sub_cat_name"><?=lang('news_title_en')?> </label>
+                                    <input type="text" name="title_en" parsley-trigger="change" required placeholder="<?=lang('news_title_en')?>" class="form-control" id="title_en">
                                 </div>
                                 <div class="form-group col-md-5">
-                                    <label for="sub_cat_name_ar"> Arabic Title </label>
-                                    <input type="text" name="title_ar" parsley-trigger="change"  placeholder="Title AR" class="form-control" id="title_ar">
+                                    <label for="sub_cat_name_ar"><?=lang('news_title_ar')?> </label>
+                                    <input type="text" name="title_ar" parsley-trigger="change"  placeholder="<?=lang('news_title_ar')?> " class="form-control" id="title_ar">
                                 </div>
 
                                 <div class="clearfix"></div>
 
                                 <div class="form-group col-md-5">
-                                    <label for="sub_cat_desc"> English Subject</label>
+                                    <label for="sub_cat_desc"><?=lang('news_subject_en')?></label>
                                     <textarea class="form-control" rows="3" name="subject_en"  minlength="3" maxlength="1000" ></textarea>
                                 </div>
                                 <div class="form-group col-md-5">
-                                    <label for="sub_cat_desc_ar"> Arabic Subject</label>
+                                    <label for="sub_cat_desc_ar"><?=lang('news_subject_ar')?></label>
                                     <textarea class="form-control" rows="3" name="subject_ar"  minlength="3" maxlength="1000" ></textarea>
                                 </div>
                                 
                                 <div class="clearfix"></div>
                                 <div class="form-group m-b-0">
-                                    <label class="control-label">News Image</label>
+                                    <label class="control-label"><?=lang('image')?></label>
                                     <input type="file" name="photo" id="photo" class="filestyle" multiple data-buttonname="btn-primary">
                                 </div>
                                 <div class="form-group text-right m-b-0">
-                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit"> Add </button>
-                                    <button type="reset" class="btn btn-default waves-effect waves-light m-l-5"> Cancel </button>
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit"> <?=lang('save')?> </button>
+                                    <button type="reset" class="btn btn-default waves-effect waves-light m-l-5"> <?=lang('cancel')?> </button>
                                 </div>
                             </form>
                         </div>
@@ -195,14 +195,7 @@ if (!loggedin()) {
     <script>
         $(document).ready(function () {
             $("#cssmenu ul>li").removeClass("active");
-            $("#item3").addClass("active");
-        });
-    </script>
-    <script type="text/javascript">
-        $('.select2me').select2({
-            placeholder: "Select",
-            width: 'auto',
-            allowClear: true
+            $("#item10").addClass("active");
         });
     </script>
 </body>

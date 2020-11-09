@@ -1,29 +1,29 @@
 <div id="cssmenu">
     <ul>
-        <li id="item1" class="active"><a href="index.php"><span>Home</span></a></li>
+        <li id="item1" class="active"><a href="index.php"><span><?= lang('home')?></span></a></li>
         <?php if ($_SESSION['cat_and_sub'] == '1') { ?>
 
             <li id="item4" class="has-sub">
-                <a href="#"><span> Slider</span></a>
+                <a href="#"><span><?= lang('slider')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="slider_add.php"><span>Add Slider  </span></a></li>
-                    <li><a href="slider_view.php"><span> View All </span></a></li>
+                    <li><a href="slider_add.php"><span><?= lang('add_new_slider')?>  </span></a></li>
+                    <li><a href="slider_view.php"><span> <?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
 
             <li id="item3" class="has-sub">
-                <a href="#"><span>Projects</span></a>
+                <a href="#"><span><?= lang('projects')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="projects_add.php"><span>Add New Project  </span></a></li>
-                    <li><a href="projects_view.php"><span>View All </span></a></li>
+                    <li><a href="projects_add.php"><span><?= lang('add_new_project')?> </span></a></li>
+                    <li><a href="projects_view.php"><span><?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
 
             <li id="item12" class="has-sub">
-                <a href="#"><span>Clients</span></a>
+                <a href="#"><span><?= lang('clients')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="client_add.php"><span>Add New Client</span></a></li>
-                    <li><a href="client_view.php"><span>View All</span></a></li>
+                    <li><a href="client_add.php"><span><?= lang('add_new_clients')?></span></a></li>
+                    <li><a href="client_view.php"><span><?= lang('view_all')?></span></a></li>
                 </ul>
             </li>
         <?php } ?>
@@ -31,10 +31,10 @@
 
         <?php if ($_SESSION['statics'] == '1') { ?>
             <li id="item1" class="has-sub">
-                <a href="#"><span> About Project</span></a>
+                <a href="#"><span> <?= lang('about_project')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="about_project_add.php"><span>Add New About Project </span></a></li>
-                    <li><a href="about_project_view.php"><span> View All </span></a></li>
+                    <li><a href="about_project_add.php"><span><?= lang('add_new_about')?> </span></a></li>
+                    <li><a href="about_project_view.php"><span> <?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
         <?php } ?>
@@ -42,43 +42,43 @@
         
         <?php if ($_SESSION['comments'] == '1') { ?>
             <li id="item3" class="has-sub">
-                <a href="#"><span>Services</span></a>
+                <a href="#"><span><?= lang('project_service')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="service_add.php"><span>Add New Service  </span></a></li>
-                    <li><a href="service_view.php"><span>View All </span></a></li>
+                    <li><a href="service_add.php"><span><?= lang('add_new_project_service')?>  </span></a></li>
+                    <li><a href="service_view.php"><span><?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
         <?php } ?>
 
         <?php if ($_SESSION['clients'] == '1') { ?>
             <li id="item7" class="has-sub">
-                <a href="#"><span>Project Images</span></a>
+                <a href="#"><span><?= lang('project_image')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="project_images_add.php"><span>Add New </span></a></li>
-                    <li><a href="project_images_view.php"><span> View All </span></a></li>
+                    <li><a href="project_images_add.php"><span><?= lang('add_new_project_image')?> </span></a></li>
+                    <li><a href="project_images_view.php"><span> <?= lang('view_all')?></span></a></li>
                 </ul>
             </li>
 
             <li id="item7" class="has-sub">
-                <a href="#"><span>Project Finishing</span></a>
+                <a href="#"><span><?= lang('project_finishing')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="project_finishing_add.php"><span>Add New </span></a></li>
-                    <li><a href="project_finishing_view.php"><span> View All </span></a></li>
+                    <li><a href="project_finishing_add.php"><span><?= lang('add_new_project_finishing')?> </span></a></li>
+                    <li><a href="project_finishing_view.php"><span> <?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
             <li id="item7" class="has-sub">
-                <a href="#"><span>Engineering Drawing</span></a>
+                <a href="#"><span><?= lang('project_drawing')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="engineering_drawing_add.php"><span>Add New </span></a></li>
-                    <li><a href="engineering_drawing_view.php"><span> View All </span></a></li>
+                    <li><a href="engineering_drawing_add.php"><span><?= lang('add_new_project_drawing')?> </span></a></li>
+                    <li><a href="engineering_drawing_view.php"><span> <?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
 
             <li id="item7" class="has-sub">
-                <a href="#"><span>Project Location</span></a>
+                <a href="#"><span><?= lang('project_location')?></span></a>
                 <ul class="has-sub">
-                    <li><a href="project_location_add.php"><span>Add Project Location</span></a></li>
-                    <li><a href="project_location_view.php"><span> View All </span></a></li>
+                    <li><a href="project_location_add.php"><span><?= lang('add_new_project_location')?></span></a></li>
+                    <li><a href="project_location_view.php"><span> <?= lang('view_all')?> </span></a></li>
                 </ul>
             </li>
 
@@ -86,10 +86,10 @@
 
         <?php if ($_SESSION['problems'] == '1') { ?>
             <li id="item103" class="has-sub"
-            ><a href="#"><span>News </span></a>
+            ><a href="#"><span><?= lang('news')?> </span></a>
                 <ul class="has-sub">
-                    <li><a href="news_add.php"><span>Add News</span></a></li>
-                    <li><a href="news_view.php"><span>View All News</span></a></li>
+                    <li><a href="news_add.php"><span><?= lang('add_new_news')?></span></a></li>
+                    <li><a href="news_view.php"><span><?= lang('view_all')?></span></a></li>
                 </ul>
             </li>
 
@@ -102,11 +102,11 @@
 
 
             <li id="item9" class="has-sub">
-                <a href="about_edit.php?id=1"><span>About Us</span></a>
+                <a href="about_edit.php?id=1"><span><?= lang('about_us')?></span></a>
             </li>
 
             <li id="item90" class="has-sub">
-                <a href="contact_edit.php"><span>Contact Us</span></a>
+                <a href="contact_edit.php"><span><?= lang('contact_us')?></span></a>
             </li>
 
         <?php } ?>
@@ -138,14 +138,20 @@
 <!--                </ul>-->
 <!--            </li>-->
 
-            <li id="item112" ><a href="setting_edit.php"><span>Setting</span></a></li>
+            <li id="item112" ><a href="setting_edit.php"><span><?= lang('settings')?></span></a></li>
+            
+            <li id="item12" class="has-sub">
+                <a href="#"><span><?= lang('language') ?></span></a>
+                <ul class="has-sub">
+                    <li><a class="dropdown-item text-<?= lang('align') ?>" href="?change_lang=ar">العربية</a></li>
+                    <li><a class="dropdown-item text-<?= lang('align') ?>" href="?change_lang=en">Einglish</a></li>
+                </ul>
+            </li>
 
         <?php } ?>
 
 
-        <li><a href="logout.php"><span>Logout </span></a></li>
-
-
+        <li><a href="logout.php"><span><?= lang('logout')?> </span></a></li>
 
     </ul>
 </div>

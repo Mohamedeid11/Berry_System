@@ -71,22 +71,23 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title"> Engineering Drawing  </h4>
+                        <h4 class="page-title"> <?=lang('project_drawing')?> </h4>
                         <ol class="breadcrumb">
-                            <li><a href="engineering_drawing_view.php">Engineering Drawing </a></li>
-                            <li class="active">Engineering Drawing </li>
+                            <li><a href="engineering_drawing_view.php"><?=lang('project_drawing')?> </a></li>
+                            <li class="active"><?=lang('add_new_project_drawing')?>  </li>
                         </ol>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title"><b> Add Project Drawing  </b></h4>
+                            <h4 class="m-t-0 header-title"><b><?=lang('add_new_project_drawing')?>  </b></h4>
                             <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" data-parsley-validate novalidate>
 
                                 <div class="form-group m-b-0">
-                                    <label class="control-label">Select The Project </label>
+                                    <label class="control-label"><?=lang('projects')?> </label>
                                     <select class="form-control select2me" name="project_id" id="project_id" required>
+                                        <option selected='selected' value="" ><?=lang('choose')?></option>
                                         <?php
                                         $query = $con->query("SELECT * FROM `projects` ORDER BY `project_id` ASC");
                                         while ($row = mysqli_fetch_assoc($query)) {
@@ -100,12 +101,12 @@ if (!loggedin()) {
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="form-group m-b-0">
-                                    <label class="control-label">Project Images</label>
+                                    <label class="control-label"><?=lang('image')?></label>
                                     <input type="file" name="image[]" id="image"  class="filestyle" multiple data-buttonname="btn-primary" multiple="">
                                 </div>
                                 <div class="form-group text-right m-b-0">
-                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit"> Add </button>
-                                    <button type="reset" class="btn btn-default waves-effect waves-light m-l-5"> Cancel </button>
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit"> <?=lang('save')?> </button>
+                                    <button type="reset" class="btn btn-default waves-effect waves-light m-l-5"> <?=lang('cancel')?> </button>
                                 </div>
                             </form>
                         </div>
@@ -173,14 +174,7 @@ if (!loggedin()) {
     <script>
         $(document).ready(function () {
             $("#cssmenu ul>li").removeClass("active");
-            $("#item3").addClass("active");
-        });
-    </script>
-    <script type="text/javascript">
-        $('.select2me').select2({
-            placeholder: "Select",
-            width: 'auto',
-            allowClear: true
+            $("#item8").addClass("active");
         });
     </script>
 </body>

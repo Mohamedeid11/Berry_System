@@ -34,15 +34,15 @@ if (!loggedin()) {
 
             if (isset($_POST['user_update'])) {
 
-                $id = $_POST['id'];
+                $id = mysqli_real_escape_string($con, trim($_POST['id']));
 
-                $title = $_POST['title'];
+                $title = mysqli_real_escape_string($con, trim($_POST['title']));
 
-                $content = $_POST['content'];
+                $content = mysqli_real_escape_string($con, trim($_POST['content']));
 
-                $title_en = $_POST['title_en'];
+                $title_en = mysqli_real_escape_string($con, trim($_POST['title_en']));
 
-                $content_en = $_POST['content_en'];
+                $content_en = mysqli_real_escape_string($con, trim($_POST['content_en']));
 
 
                 if (isset($_FILES['image_update']['name']) && !empty($_FILES['image_update']['name'])) {
@@ -111,7 +111,7 @@ if (!loggedin()) {
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">About Us</h4>
+                                <h4 class="page-title"><?= lang('about_us')?></h4>
                                 <ol class="breadcrumb">
                                     <!--<li><a href="user_add.php">المديرين</a></li>-->
                                     <!--<li class="active">تعديل مدير</li>-->
@@ -147,24 +147,24 @@ if (!loggedin()) {
                                                 <input type="hidden" name="id" id="id" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                                 <div class="form-group">
-                                                    <label for="title">Arabic Title</label>
+                                                    <label for="title"><?= lang('arabic_name')?></label>
                                                     <input type="text" name="title" id="title" parsley-trigger="change" required value="<?php echo $title; ?>" class="form-control">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="content">Arabic Content</label>
+                                                    <label for="content"><?= lang('arabic_content')?></label>
                                                     <textarea class="form-control" rows="3" name="content"  minlength="3" maxlength="1000" required=""><?php echo $content; ?></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="title">English Title</label>
+                                                    <label for="title"><?= lang('english_name')?></label>
                                                     <input type="text" name="title_en" id="title_en" parsley-trigger="change" required value="<?php echo $title_en; ?>" class="form-control">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="content_en">English Content</label>
+                                                    <label for="content_en"><?= lang('english_content')?></label>
                                                     <textarea class="form-control" rows="3" name="content_en"  minlength="3" maxlength="1000" required=""><?php echo $content_en; ?></textarea>
                                                 </div>
                                                 <input type="hidden" name="image_ext_old" value="<?php echo $logo_image; ?>" />
                                                 <div class="form-group m-b-0">
-                                                    <label for="about">Edit Logo </label>
+                                                    <label for="about"><?= lang('edit_logo')?> </label>
 
                                                     <div class="gal-detail thumb getImage">
                                                         <a href="<?php echo $logo_image; ?>" class="image-popup" title="<?php echo $title; ?>">
@@ -172,14 +172,14 @@ if (!loggedin()) {
                                                         </a>
                                                     </div>
                                                     <div class="form-group m-b-0">
-                                                        <label class="control-label">Header Image    </label>
+                                                        <label class="control-label"><?= lang('logo_image')?> </label>
                                                         <input type="file" name="image_update" id="image_update" class="filestyle" data-buttonname="btn-primary">
                                                     </div>
                                                 </div>
                                                 <br>
                                                 <br>
                                                 <div class="form-group text-right m-b-0">
-                                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="user_update" id="updateUser">Update</button>
+                                                    <button class="btn btn-primary waves-effect waves-light" type="submit" name="user_update" id="updateUser"><?=lang('update')?></button>
                                                 </div>
                                             </form>
 
@@ -210,4 +210,10 @@ if (!loggedin()) {
 
 
     </body>
+<script>
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item12").addClass("active");
+    });
+</script>
 </html>

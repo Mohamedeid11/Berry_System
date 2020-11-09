@@ -31,11 +31,11 @@ if (!loggedin()) {
 
     if (isset($_POST['news_update'])) {
 
-        $newsID_update = $_POST['newsID_update'];
-        $title_en = $_POST['title_en'];
-        $title_ar = $_POST['title_ar'];
-        $subject_en = $_POST['subject_en'];
-        $subject_ar = $_POST['subject_ar'];
+        $newsID_update = mysqli_real_escape_string($con, trim($_POST['newsID_update']));
+        $title_en = mysqli_real_escape_string($con, trim($_POST['title_en']));
+        $title_ar = mysqli_real_escape_string($con, trim($_POST['title_ar']));
+        $subject_en = mysqli_real_escape_string($con, trim($_POST['subject_en']));
+        $subject_ar = mysqli_real_escape_string($con, trim($_POST['subject_ar']));
 
 
         $errors = array();
@@ -94,10 +94,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">News  </h4>
+                        <h4 class="page-title"><?= lang('news')?>  </h4>
                         <ol class="breadcrumb">
-                            <li><a href="news_view.php">News  </a></li>
-                            <li class="active"> Update News  </li>
+                            <li><a href="news_view.php"><?= lang('news')?>  </a></li>
+                            <li class="active"> <?= lang('update_news')?>  </li>
                         </ol>
                     </div>
                 </div>
@@ -133,27 +133,27 @@ if (!loggedin()) {
                                         <input type="hidden" name="newsID_update" id="newsID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
 
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_name">English Title  </label>
+                                            <label for="sub_cat_name"><?=lang('news_title_en')?></label>
                                             <input type="text" name="title_en" parsley-trigger="change" required placeholder="Title EN" class="form-control" id="title_en" value="<?= $title_en ;?>">
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_name_ar"> Arabic Title </label>
-                                            <input type="text" name="title_ar" parsley-trigger="change"  placeholder="Title AR" class="form-control" id="title_ar" value="<?= $title_en ;?>">
+                                            <label for="sub_cat_name_ar"><?=lang('news_title_ar')?></label>
+                                            <input type="text" name="title_ar" parsley-trigger="change"  placeholder="Title AR" class="form-control" id="title_ar" value="<?= $title_ar ;?>">
                                         </div>
 
                                         <div class="clearfix"></div>
 
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc"> English Subject</label>
+                                            <label for="sub_cat_desc"><?=lang('news_subject_en')?></label>
                                             <textarea class="form-control" rows="3" name="subject_en"  minlength="3" maxlength="1000" ><?= $subject_en?></textarea>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="sub_cat_desc_ar"> Arabic Subject</label>
-                                            <textarea class="form-control" rows="3" name="subject_ar"  minlength="3" maxlength="1000" ><?= $subject_en?></textarea>
+                                            <label for="sub_cat_desc_ar"><?=lang('news_subject_ar')?></label>
+                                            <textarea class="form-control" rows="3" name="subject_ar"  minlength="3" maxlength="1000" ><?= $subject_ar?></textarea>
                                         </div>
 
                                         <div class="clearfix"></div>
-                                        <label for="userName">Image  <a class="showImg">edit?</a> </label>
+                                        <label for="userName"><?=lang('image')?>  <a class="showImg"><?=lang('edit')?>?</a> </label>
                                         <input type="hidden" name="image_ext_old" value="<?= $photo; ?>" />
 
                                         <div class="gal-detail thumb getImage">
@@ -163,13 +163,13 @@ if (!loggedin()) {
                                         </div>
 
                                         <div class="form-group m-b-0">
-                                            <label class="control-label">News Image </label>
+                                            <label class="control-label"><?=lang('image')?> </label>
                                             <input type="file" name="image_update" id="image_update" class="filestyle" data-buttonname="btn-primary">
                                         </div>
 
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="news_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="news_update" id="updateMenu"><?=lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -198,10 +198,9 @@ if (!loggedin()) {
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
 <script>
-    $('.select2m').select2({
-        placeholder: "Select",
-        width: 'auto',
-        allowClear: true
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item10").addClass("active");
     });
 </script>
 

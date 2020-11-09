@@ -42,9 +42,9 @@ if (isset($_GET['project_id']) && $_GET['lang'] != '') {
             $project = array();
             $project["id"] = $row["id"];
             if ($lang == "ar") {
-                $project["desc_ar"] = $row["desc_ar"];
+                $project["desc"] = $row["desc_ar"];
             } else {
-                $project["desc_en"] = $row["desc_en"];
+                $project["desc"] = $row["desc_en"];
             }
             $project["project_id"] = $row["project_id"];
             

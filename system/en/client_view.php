@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Galleries </h4>
+                        <h4 class="page-title"><?= lang('clients')?> </h4>
                         <ol class="breadcrumb">
-                            <li><a href="slider_view.php">Galleries </a></li>
-                            <li class="active">Galleries  </li>
+                            <li><a href="slider_view.php"><?= lang('clients')?> </a></li>
+                            <li class="active"><?= lang('clients')?>  </li>
                         </ol>
                     </div>
                 </div>
@@ -47,12 +47,12 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>English Name</th>
-                                    <th>Arabic Name</th>
-                                    <th> E-Mail </th>
-                                    <th> Phone </th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?= lang('client_name_english')?></th>
+                                    <th><?= lang('client_name_arabic')?></th>
+                                    <th> <?= lang('email')?> </th>
+                                    <th> <?= lang('phone_number')?> </th>
+                                    <th><?= lang('date_add')?> </th>
+                                    <th> <?= lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -167,8 +167,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item11").addClass("active");
     });
 </script>
 

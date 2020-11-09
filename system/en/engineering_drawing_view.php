@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Engineering Drawing </h4>
+                        <h4 class="page-title"><?=lang('project_drawing')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="engineering_drawing_view.php">Engineering Drawing </a></li>
-                            <li class="active">Engineering Drawing </li>
+                            <li><a href="engineering_drawing_view.php"><?=lang('project_drawing')?></a></li>
+                            <li class="active"><?=lang('project_drawing')?></li>
                         </ol>
                     </div>
                 </div>
@@ -47,11 +47,11 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Project Name English</th>
-                                    <th>Project Name Arabic</th>
-                                    <th> Images</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?=lang('project_name_english')?></th>
+                                    <th><?=lang('project_name_arabic')?></th>
+                                    <th> <?=lang('image')?></th>
+                                    <th><?=lang('date_add')?></th>
+                                    <th> <?=lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -174,8 +174,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item8").addClass("active");
     });
 </script>
 

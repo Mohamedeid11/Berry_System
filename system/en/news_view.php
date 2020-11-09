@@ -32,10 +32,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">News </h4>
+                        <h4 class="page-title"><?= lang('news')?></h4>
                         <ol class="breadcrumb">
-                            <li><a href="news_view.php">News </a></li>
-                            <li class="active">News </li>
+                            <li><a href="news_view.php"><?= lang('news')?> </a></li>
+                            <li class="active"><?= lang('news')?> </li>
                         </ol>
                     </div>
                 </div>
@@ -47,13 +47,11 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>English Title</th>
-                                    <th>Arabic Title</th>
-                                    <th> English Subject</th>
-                                    <th> Arabic Subject</th>
-                                    <th> Image</th>
-                                    <th> Date Added </th>
-                                    <th> Action </th>
+                                    <th><?=lang('news_title_en')?></th>
+                                    <th><?=lang('news_title_ar')?></th>
+                                    <th><?=lang('image')?></th>
+                                    <th><?=lang('date_add')?> </th>
+                                    <th><?=lang('action')?> </th>
 
                                 </tr>
                                 </thead>
@@ -90,13 +88,6 @@ if (!loggedin()) {
 
                                         <td>
                                             <?= $title_ar ?>
-                                        </td>
-
-                                        <td>
-                                            <?= $subject_en ?>
-                                        </td>
-                                        <td>
-                                            <?= $subject_ar ?>
                                         </td>
                                         <td>
                                             <a href="<?php echo $photo; ?>" class="image-popup" title="<?php echo $title_en; ?>">
@@ -187,8 +178,8 @@ if (!loggedin()) {
 
 <script>
     $(document).ready(function () {
-        $("#cssslider ul>li").removeClass("active");
-        $("#item5").addClass("active");
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item10").addClass("active");
     });
 </script>
 

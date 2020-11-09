@@ -34,7 +34,7 @@ if (!loggedin()) {
         $clientID_update = $_POST['clientID_update'];
         $client_name_en = $_POST['client_name_en'];
         $client_name_ar = $_POST['client_name_ar'];
-        $client_password = $_POST['client_password'];
+        $client_password = md5($_POST['client_password']);
         $client_email = $_POST['client_email'];
         $client_phone = $_POST['client_phone'];
 
@@ -65,10 +65,10 @@ if (!loggedin()) {
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">Client </h4>
+                        <h4 class="page-title"><?= lang('clients')?> </h4>
                         <ol class="breadcrumb">
-                            <li><a href="client_view.php">Client  </a></li>
-                            <li class="active"> Update Client  </li>
+                            <li><a href="client_view.php"><?= lang('clients')?>  </a></li>
+                            <li class="active"> <?= lang('update_client')?>  </li>
                         </ol>
                     </div>
                 </div>
@@ -98,28 +98,28 @@ if (!loggedin()) {
                                     <form method="POST" enctype="multipart/form-data" data-parsley-validate novalidate>
                                         <input type="hidden" name="clientID_update" id="clientID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
                                         <div class="form-group">
-                                            <label for="service_name">Client Name English  </label>
-                                            <input type="text" name="client_name_en" parsley-trigger="change"  placeholder="Image Name IN English" class="form-control" id="client_name_en"  value="<?php echo $name_en; ?>">
+                                            <label for="service_name"><?= lang('client_name_english')?>  </label>
+                                            <input type="text" name="client_name_en" parsley-trigger="change"  placeholder="<?= lang('client_name_english')?>" class="form-control" id="client_name_en"  value="<?php echo $name_en; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="service_name">Client Name Arabic </label>
-                                            <input type="text" name="client_name_ar" parsley-trigger="change"  placeholder="Image Name IN Arabic" class="form-control" id="client_name_ar"  value="<?= $name_ar ?>">
+                                            <label for="service_name"><?= lang('client_name_arabic')?> </label>
+                                            <input type="text" name="client_name_ar" parsley-trigger="change"  placeholder="<?= lang('client_name_arabic')?>" class="form-control" id="client_name_ar"  value="<?= $name_ar ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="service_name">Client Password</label>
-                                            <input type="text" name="client_password" parsley-trigger="change"  placeholder="Image Name IN Arabic" class="form-control" id="client_password"  value="<?= $password ?>">
+                                            <label for="service_name"><?= lang('password')?></label>
+                                            <input type="text" name="client_password" parsley-trigger="change"  placeholder="<?= lang('password')?>" class="form-control" id="client_password"  value="<?= $password ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="service_name">Client Email </label>
-                                            <input type="text" name="client_email" parsley-trigger="change"  placeholder="Image Name IN English" class="form-control" id="client_email"  value="<?php echo $email; ?>">
+                                            <label for="service_name"><?= lang('email')?> </label>
+                                            <input type="text" name="client_email" parsley-trigger="change"  placeholder="<?= lang('email')?>" class="form-control" id="client_email"  value="<?php echo $email; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="service_name">Client Phone  </label>
-                                            <input type="text" name="client_phone" parsley-trigger="change"  placeholder="Image Name IN Arabic" class="form-control" id="client_phone"  value="<?= $phone ?>">
+                                            <label for="service_name"><?= lang('phone_number')?> </label>
+                                            <input type="text" name="client_phone" parsley-trigger="change"  placeholder="<?= lang('phone_number')?>" class="form-control" id="client_phone"  value="<?= $phone ?>">
                                         </div>
                                         <br>
                                         <div class="form-group text-right m-b-0">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="client_update" id="updateMenu">تحديث</button>
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="client_update" id="updateMenu"><?= lang('save')?></button>
                                         </div>
                                     </form>
 
@@ -148,10 +148,9 @@ if (!loggedin()) {
 <!-- END wrapper -->
 <?php include("include/footer.php"); ?>
 <script>
-    $('.select2m').select2({
-        placeholder: "Select",
-        width: 'auto',
-        allowClear: true
+    $(document).ready(function () {
+        $("#cssmenu ul>li").removeClass("active");
+        $("#item11").addClass("active");
     });
 </script>
 
