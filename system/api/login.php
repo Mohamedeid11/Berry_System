@@ -41,7 +41,7 @@ if (isset($postdata) && !empty($postdata)) {
 
     // check for empty result
     if (mysql_num_rows($result) > 0) {
-        $result_2 = mysql_query("SELECT * FROM `clients` WHERE `client_phone`='$client_phone' AND `client_password`=md5($client_password) ORDER BY `client_id` DESC") or die(mysql_error());
+        $result_2 = mysql_query("SELECT * FROM `clients` WHERE `client_phone`='$client_phone' AND `client_password`= '$client_password' ORDER BY `client_id` DESC") or die(mysql_error());
 
         if (mysql_num_rows($result_2) > 0) {
 
@@ -52,8 +52,7 @@ if (isset($postdata) && !empty($postdata)) {
                 $product = array();
                 $product["client_id"] = $row["client_id"];
                 $client_id = $row["client_id"];
-                $product["client_name_en"] = $row["client_name_en"];
-                $product["client_name_ar"] = $row["client_name_ar"];
+                $product["client_name"] = $row["client_name"];
                 $product["client_password"] = $row["client_password"];
                 $product["client_email"] = $row["client_email"];
                 $product["client_phone"] = $row["client_phone"];

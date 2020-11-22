@@ -24,14 +24,13 @@ header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
 // get all products from products table
-// Start Functionality  
+// Start Functionality
 $postdata = file_get_contents("php://input");
 
 if (isset($postdata) && !empty($postdata)) {
     $Req = json_decode($postdata, TRUE);
 
-    $client_name_en = trim($Req['client_name_en']);
-    $client_name_ar = trim($Req['client_name_ar']);
+    $client_name = trim($Req['client_name']);
     $client_password = trim($Req['client_password']);
     $client_email = trim($Req['client_email']);
     $client_phone = trim($Req['client_phone']);
@@ -53,7 +52,7 @@ if (isset($postdata) && !empty($postdata)) {
         echo json_encode($response);
     } else {
 
-        $result = mysql_query("INSERT INTO clients(client_name_en,client_name_ar,client_password,client_email,client_phone,date) VALUES('$client_name_en','$client_name_ar','$client_password','$client_email','$client_phone','" . date("Y-m-d H:i:s") . "')");
+        $result = mysql_query("INSERT INTO clients(client_name,client_password,client_email,client_phone,date) VALUES('$client_name','$client_password','$client_email','$client_phone','" . date("Y-m-d H:i:s") . "')");
         $client_id = mysql_insert_id();
         if ($result) {
             $result_one = mysql_query("INSERT INTO device_token(device_token,type,date_added) 
@@ -66,8 +65,7 @@ if (isset($postdata) && !empty($postdata)) {
         // temp user array
         $product = array();
         $product["client_id"] = $client_id;
-        $product["client_name_en"] = $Req["client_name_en"];
-        $product["client_name_ar"] = $Req["client_name_ar"];
+        $product["client_name"] = $Req["client_name"];
         $product["client_password"] = $client_password;
         $product["client_email"] = $Req["client_email"];
         $product["client_phone"] = $Req["client_phone"];

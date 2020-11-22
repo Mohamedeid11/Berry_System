@@ -65,6 +65,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_name\":\"Mohamed\",\r\n    \"client_password\":\"123456\",\r\n    \"client_email\":\"mohamed@mohamed.com\",\r\n    \"client_phone\":\"01101111111\",\r\n    \"device_token\":\"tokn\",\r\n    \"type\":\"android\",\r\n    \"lang\":\"en\"\r\n}"
+						},
+						"url": {
+							"raw": "http://berry74.com/constracting/system/api/add-client.php",
+							"protocol": "http",
+							"host": [
+								"berry74",
+								"com"
+							],
+							"path": [
+								"constracting",
+								"system",
+								"api",
+								"add-client.php"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
