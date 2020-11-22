@@ -47,8 +47,7 @@ if (!loggedin()) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th><?= lang('client_name_english')?></th>
-                                    <th><?= lang('client_name_arabic')?></th>
+                                    <th><?= lang('client_name')?></th>
                                     <th> <?= lang('email')?> </th>
                                     <th> <?= lang('phone_number')?> </th>
                                     <th><?= lang('date_add')?> </th>
@@ -64,7 +63,7 @@ if (!loggedin()) {
                                 $x = 1;
                                 while ($row = mysqli_fetch_assoc($query)) {
                                     $id = $row['client_id'];
-                                    $name_en = $row['client_name_en'];
+                                    $name= $row['client_name'];
                                     $name_ar = $row['client_name_ar'];
                                     $email = $row['client_email'];
                                     $phone = $row['client_phone'];
@@ -73,11 +72,11 @@ if (!loggedin()) {
                                     <tr class="gradeX">
                                         <td><?php echo $x; ?></td>
                                         <td>
-                                            <?= $name_en ?>
+                                            <?= $name?>
                                         </td>
-                                        <td>
-                                            <?= $name_ar ?>
-                                        </td>
+<!--                                        <td>-->
+<!--                                            --><?//= $name_ar ?>
+<!--                                        </td>-->
                                         <td>
                                             <?= $email ?>
                                         </td>

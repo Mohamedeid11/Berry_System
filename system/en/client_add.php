@@ -26,9 +26,9 @@ if (!loggedin()) {
             <?php
             if (isset($_POST['submit'])) {
 
-                $client_name_en = mysqli_real_escape_string($con, trim($_POST['client_name_en']));
+                $client_name = mysqli_real_escape_string($con, trim($_POST['client_name']));
 
-                $client_name_ar = mysqli_real_escape_string($con, trim($_POST['client_name_ar']));
+//                $client_name_ar = mysqli_real_escape_string($con, trim($_POST['client_name_ar']));
 
                 $client_password = md5(trim($_POST['client_password']));
 
@@ -39,7 +39,7 @@ if (!loggedin()) {
 
                 $errors = array();
 
-                if (empty($client_name_en)) {
+                if (empty($client_name)) {
                     $errors[] = "Please enter all fields !";
                 }
                 if (empty($client_name_ar)) {
@@ -60,7 +60,7 @@ if (!loggedin()) {
                         echo get_error($error);
                     }
                 } else {
-                    $con->query(" INSERT INTO `clients` (`client_id`, `client_name_en`, `client_name_ar`, `client_password`, `client_email`, `client_phone`) VALUES (NULL, '$client_name_en' , '$client_name_ar', '$client_password', '$client_email', '$client_phone')");
+                    $con->query(" INSERT INTO `clients` (`client_id`, `client_name`, `client_password`, `client_email`, `client_phone`) VALUES (NULL, '$client_name' , '$client_password', '$client_email', '$client_phone')");
                     echo get_success("Successfully Added");
                 }
             }
@@ -86,24 +86,24 @@ if (!loggedin()) {
                                     <h4 class="m-t-0 header-title"><b>Add New Client </b></h4>
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" data-parsley-validate novalidate>
                                         <div class="form-group m-b-3">
-                                            <label for="userName">Client Name English</label>
-                                            <input type="text" name="client_name_en" parsley-trigger="change" required placeholder="Client nameIn English" class="form-control" id="client_name">
+                                            <label for="userName"><?= lang('client_name')?></label>
+                                            <input type="text" name="client_name" parsley-trigger="change" required placeholder="Client nameIn English" class="form-control" id="client_name">
+                                        </div>
+<!--                                        <div class="form-group  m-b-3">-->
+<!--                                            <label for="userName">Client Name Arabic</label>-->
+<!--                                            <input type="text" name="client_name_ar" parsley-trigger="change" required placeholder="Client Name in Arabic" class="form-control" id="client_name">-->
+<!--                                        </div>-->
+                                        <div class="form-group  m-b-3">
+                                            <label for="userName"><?= lang('password')?></label>
+                                            <input type="text" name="client_password" parsley-trigger="change" required placeholder="<?= lang('password')?> " class="form-control" id="client_password">
                                         </div>
                                         <div class="form-group  m-b-3">
-                                            <label for="userName">Client Name Arabic</label>
-                                            <input type="text" name="client_name_ar" parsley-trigger="change" required placeholder="Client Name in Arabic" class="form-control" id="client_name">
+                                            <label for="email"><?= lang('email')?></label>
+                                            <input type="text" name="client_email" parsley-trigger="change" required placeholder="<?= lang('email')?> " class="form-control" id="client_email">
                                         </div>
                                         <div class="form-group  m-b-3">
-                                            <label for="userName">Password</label>
-                                            <input type="text" name="client_password" parsley-trigger="change" required placeholder="password " class="form-control" id="client_password">
-                                        </div>
-                                        <div class="form-group  m-b-3">
-                                            <label for="email"> Client Email</label>
-                                            <input type="text" name="client_email" parsley-trigger="change" required placeholder="email " class="form-control" id="client_email">
-                                        </div>
-                                        <div class="form-group  m-b-3">
-                                            <label for="userName">Phone</label>
-                                            <input type="text" name="client_phone" parsley-trigger="change" required placeholder="phone" class="form-control" id="client_phone">
+                                            <label for="userName"><?= lang('phone_number')?></label>
+                                            <input type="text" name="client_phone" parsley-trigger="change" required placeholder="<?= lang('phone_number')?>" class="form-control" id="client_phone">
                                         </div>
                                         <br />
 

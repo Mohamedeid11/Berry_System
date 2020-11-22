@@ -21,6 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1d0921c0-3c9b-40f8-b949-5e87cc45fca8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/en/client_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/en/client_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/en/client_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/en/client_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/en/client_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/en/client_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/en/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/en/connection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +113,7 @@
       <workItem from="1604904436500" duration="13217000" />
       <workItem from="1605169558721" duration="1691000" />
       <workItem from="1605617707194" duration="1159000" />
-      <workItem from="1606050250232" duration="5802000" />
+      <workItem from="1606050250232" duration="6567000" />
     </task>
     <servers />
   </component>
@@ -152,11 +156,11 @@
     </state>
     <state x="2003" y="82" width="1201" height="564" key="DiffContextDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1604916684275" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1604423301683" />
-    <state x="2003" y="82" width="1201" height="564" key="DirDiffDialog" timestamp="1604919251415">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog" timestamp="1606059325311">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2003" y="82" width="1201" height="564" key="DirDiffDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1604919251415" />
-    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1604423301683" />
+    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1606059325311" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606051572513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

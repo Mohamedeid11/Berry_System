@@ -32,8 +32,7 @@ if (!loggedin()) {
     if (isset($_POST['client_update'])) {
 
         $clientID_update = $_POST['clientID_update'];
-        $client_name_en = $_POST['client_name_en'];
-        $client_name_ar = $_POST['client_name_ar'];
+        $client_name = $_POST['client_name'];
         $client_password = md5($_POST['client_password']);
         $client_email = $_POST['client_email'];
         $client_phone = $_POST['client_phone'];
@@ -47,7 +46,7 @@ if (!loggedin()) {
             }
         }
         else {
-            $con->query("UPDATE `clients` SET `client_name_en`='$client_name_en' , `client_name_ar`='$client_name_ar',`client_password`='$client_password',`client_email`='$client_email',`client_phone`='$client_phone' WHERE `client_id`='$clientID_update'");
+            $con->query("UPDATE `clients` SET `client_name`='$client_name' , `client_password`='$client_password',`client_email`='$client_email',`client_phone`='$client_phone' WHERE `client_id`='$clientID_update'");
         }
         echo get_success("Successfully Updated");
         echo "<meta http-equiv='refresh' content='0'>";
@@ -84,8 +83,7 @@ if (!loggedin()) {
                     $row_select = mysqli_fetch_array($query_select);
 
                     $id = $row_select['client_id'];
-                    $name_en = $row_select['client_name_en'];
-                    $name_ar = $row_select['client_name_ar'];
+                    $name_en = $row_select['client_name'];
                     $password = $row_select['client_password'];
                     $email = $row_select['client_email'];
                     $phone = $row_select['client_phone'];
@@ -98,13 +96,13 @@ if (!loggedin()) {
                                     <form method="POST" enctype="multipart/form-data" data-parsley-validate novalidate>
                                         <input type="hidden" name="clientID_update" id="clientID_update" parsley-trigger="change" required value="<?php echo $id; ?>" class="form-control">
                                         <div class="form-group">
-                                            <label for="service_name"><?= lang('client_name_english')?>  </label>
-                                            <input type="text" name="client_name_en" parsley-trigger="change"  placeholder="<?= lang('client_name_english')?>" class="form-control" id="client_name_en"  value="<?php echo $name_en; ?>">
+                                            <label for="service_name"><?= lang('client_name')?>  </label>
+                                            <input type="text" name="client_name" parsley-trigger="change"  placeholder="<?= lang('client_name')?>" class="form-control" id="client_name"  value="<?php echo $name_en; ?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="service_name"><?= lang('client_name_arabic')?> </label>
-                                            <input type="text" name="client_name_ar" parsley-trigger="change"  placeholder="<?= lang('client_name_arabic')?>" class="form-control" id="client_name_ar"  value="<?= $name_ar ?>">
-                                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="service_name">--><?//= lang('client_name_arabic')?><!-- </label>-->
+<!--                                            <input type="text" name="client_name_ar" parsley-trigger="change"  placeholder="--><?//= lang('client_name_arabic')?><!--" class="form-control" id="client_name_ar"  value="--><?//= $name_ar ?><!--">-->
+<!--                                        </div>-->
                                         <div class="form-group">
                                             <label for="service_name"><?= lang('password')?></label>
                                             <input type="text" name="client_password" parsley-trigger="change"  placeholder="<?= lang('password')?>" class="form-control" id="client_password"  value="<?= $password ?>">
